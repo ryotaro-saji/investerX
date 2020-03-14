@@ -24,10 +24,25 @@
       </div>
 
       <div class="form-group">
-        <%= f.label :password_confirmation, 'Confirmation' %>
+        <%= f.label :password_confirmation, 'Password Confirmation' %>
         <%= f.password_field :password_confirmation, class: 'form-control' %>
       </div>
-
+      
+      <div class="form-group">
+        <%= f.label :style, '投資手法(時間軸や得意な売買方法など)' %>
+        <%= f.text_field :style, class: 'form-control' %>
+      </div>
+      
+      <div class="form-group">
+        <%= f.label :like, 'イチオシの銘柄(なしの場合は「なし」と記入)' %>
+        <%= f.text_field :like, class: 'form-control' %>
+      </div>
+      
+      <div class="form-group">
+        <%= f.label :book, 'オススメの本(なしの場合は「なし」と記入)' %>
+        <%= f.text_field :book, class: 'form-control' %>
+      </div>
+      
       <%= f.submit 'Sign up', class: 'btn btn-primary btn-block' %>
     <% end %>
   </div>

@@ -1,0 +1,22 @@
+<h1>投稿一覧</h1>
+<ul class="list-unstyled">
+  <% @investerxes.each do |investerx| %>
+    <li class="media mb-3">
+      <div class="media-body">
+        <div>
+          <%= link_to investerx.user.name, user_path(investerx.user) %> <span class="text-muted">posted at <%= investerx.created_at %></span>
+        </div>
+        <div>
+          <p><%= investerx.content %></p>
+        </div>
+        <div>
+          <% if current_user == investerx.user %>
+            <%= link_to "消去", investerx, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
+          <% end %>
+        </div>
+      </div>
+    </li>
+  <% end %>
+
+  <%= paginate @investerxes %>
+</ul>
