@@ -36,6 +36,11 @@ class UsersController < ApplicationController
     counts(@user)
   end
   
+  def investerxes
+    @user = User.find(params[:id])
+    @user_investerxes = @user.investerxes.order(id: :desc).page(params[:page]).per(20)
+  end
+  
    private
 
   def user_params

@@ -1,6 +1,6 @@
 <ul class="nav nav-tabs nav-justified mb-3">
     <li class="nav-item"><%= link_to 'プロフィール', user_path, class: 'nav-link' %></li>
-    <li class="nav-item"><%= link_to '投稿一覧', investerxes_path, class: 'nav-link' %></li>
+    <li class="nav-item"><a href="<%= investerxes_user_path(@user) %>" class="nav-link <%= 'active' if current_page?(investerxes_user_path(@user)) %>">投稿一覧<%= @count_investerxes %></a></li>
     <li class="nav-item"><%= link_to '投稿フォーム', new_investerx_path, class: 'nav-link' %></li>
     <li class="nav-item"><a href="<%= followings_user_path(@user) %>" class="nav-link <%= 'active' if current_page?(followings_user_path(@user)) %>">フォロー<%= @count_followings %></a></li>
     <li class="nav-item"><a href="<%= followers_user_path(@user) %>" class="nav-link <%= 'active' if current_page?(followers_user_path(@user)) %>">フォロワー<%= @count_followers %></a></li>

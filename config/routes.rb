@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     member do
       get :followings
       get :followers
+      get :investerxes
     end
   end
   resources :investerxes, only: [:create, :destroy, :index, :new]

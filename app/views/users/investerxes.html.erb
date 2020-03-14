@@ -1,6 +1,6 @@
 <h1>投稿一覧</h1>
 <ul class="list-unstyled">
-  <% @investerxes.each do |investerx| %>
+  <% @user_investerxes.each do |investerx| %>
     <li class="media mb-3">
       <div class="media-body">
         <div>
@@ -18,5 +18,5 @@
     </li>
   <% end %>
 
-  <%= paginate @investerxes %>
+  <%= paginate @user_investerxes %>
 </ul>
