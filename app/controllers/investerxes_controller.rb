@@ -1,6 +1,8 @@
 class InvesterxesController < ApplicationController
 before_action :require_user_logged_in
 before_action :correct_user, only: [:destroy]
+  def index
+  end
   
   def new
     @investerx = Investerx.new
@@ -10,7 +12,7 @@ before_action :correct_user, only: [:destroy]
     @investerx = current_user.investerxes.build(investerx_params)
     if @investerx.save
       flash[:success] = 'メッセージを投稿しました。'
-      redirect_to
+      redirect_to current_user
     else
       @investerxes = current_user.investerxes.order(id: :desc).page(params[:page])
       flash.now[:danger] = 'メッセージの投稿に失敗しました。'
