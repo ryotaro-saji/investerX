@@ -13,6 +13,6 @@ Rails.application.routes.draw do
       get :investerxes
     end
   end
-  resources :investerxes, only: [:create, :destroy, :index, :new]
+  resources :investerxes, only: [:create, :destroy, :new]
   resources :relationships, only: [:create, :destroy]
 end

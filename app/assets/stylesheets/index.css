@@ -1,0 +1,57 @@
+@charset "UTF-8";
+
+.all {
+    margin: 0;
+    padding: 0;
+    
+}
+
+body{
+    font-family: "游ゴシック"; 
+}
+
+#wrapper{
+    color: blue;
+    font-size: 25px;
+    
+}
+
+.sample {
+    position: relative;
+    
+}
+
+.sample p{
+    position: absolute;
+    top: 40%;
+    left: 30%;
+    color: white;
+    font-weight: bold;
+    font-size: 2em;
+    font-family: Quicksand, sans-serif;
+    
+}
+
+.a{
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 30px;
+} 
+
+.b{
+    margin-top: 40px;
+    color: red;
+    font-weight: bold;
+}
+
+footer{
+    text-align: center;
+    display: block;
+    padding: 8px 0;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.c{
+   margin-bottom: 20px; 
+}
