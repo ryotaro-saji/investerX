@@ -1,20 +1,11 @@
-<ul class="nav nav-tabs nav-justified mb-3">
-    <li class="nav-item"><%= link_to 'プロフィール', user_path, class: 'nav-link' %></li>
-    <li class="nav-item"><%= link_to '投稿一覧', investerxes_path, class: 'nav-link' %></li>
-    <li class="nav-item"><%= link_to '投稿フォーム', new_investerx_path, class: 'nav-link' %></li>
-    <li class="nav-item"><a href="<%= followings_user_path(@user) %>" class="nav-link <%= 'active' if current_page?(followings_user_path(@user)) %>">フォロー<%= @count_followings %></a></li>
-    <li class="nav-item"><a href="<%= followers_user_path(@user) %>" class="nav-link <%= 'active' if current_page?(followers_user_path(@user)) %>">フォロワー<%= @count_followers %></a></li>
-</ul>
 <div class="row">
     <div class="col-sm-2">
         <%= render 'users', users: @followings %>
-    </div>
-    <div class="col-sm-2">
-        <%= render 'relationships/follow_button', user: @user %>
     </div>
 </div>
 <div class="container mt-5">
     <div class="row" >
         <div class="btn btn-dark" ><%= link_to 'Logout', logout_path, method: :delete%></div>
+        <div class="btn btn-outline-success ml-4"><%= link_to 'プロフィールに戻る', user_path %></div>
     </div>
 </div>

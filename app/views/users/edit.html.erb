@@ -1,0 +1,25 @@
+<h1><%= @user.name %> のプロフィール編集ページ</h1>
+
+<%= form_with(model: @user, local: true) do |f| %>
+
+    <div class="form-group">
+        <%= f.label :style, '投資手法' %>
+        <%= f.text_field :style, class: 'form-control' %>
+    </div>
+    
+    <div class="form-group">
+        <%= f.label :like, 'イチオシの銘柄' %>
+        <%= f.text_field :like, class: 'form-control' %>
+    </div>
+        
+    <div class="form-group">
+        <%= f.label :book, 'オススメの本' %>
+        <%= f.text_field :book, class: 'form-control' %>
+    </div>
+
+    <%= f.submit '変更する', class: "btn btn-warning" %>
+    
+<% end %>
+
+<div class="mt-4"><%= link_to 'プロフィールに戻る', user_path %></div>
+

@@ -30,18 +30,18 @@
           </div>
       
           <div class="form-group">
-            <%= f.label :style, '投資手法(時間軸や得意な売買方法など)' %>
-            <%= f.text_field :style, class: 'form-control' %>
+            <%= f.label :style, '投資手法' %>
+            <%= f.text_field :style, class: 'form-control', :placeholder=> '時間軸や得意な売買方法など' %>
           </div>
       
           <div class="form-group">
-            <%= f.label :like, 'イチオシの銘柄(なしの場合は「なし」と記入)' %>
-            <%= f.text_field :like, class: 'form-control' %>
+            <%= f.label :like, 'イチオシの銘柄' %>
+            <%= f.text_field :like, class: 'form-control', :placeholder=> 'なしの場合は「なし」と記入' %>
           </div>
       
           <div class="form-group">
-            <%= f.label :book, 'オススメの本(なしの場合は「なし」と記入)' %>
-            <%= f.text_field :book, class: 'form-control' %>
+            <%= f.label :book, 'オススメの本' %>
+            <%= f.text_field :book, class: 'form-control', :placeholder=> 'なしの場合は「なし」と記入' %>
           </div>
       
           <%= f.submit 'Sign up', class: 'btn btn-primary btn-block' %>
