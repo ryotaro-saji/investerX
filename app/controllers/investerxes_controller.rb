@@ -13,7 +13,7 @@ before_action :correct_user, only: [:destroy]
       flash[:success] = 'メッセージを投稿しました。'
       redirect_to current_user
     else
-      @investerxes = current_user.investerxes.order(id: :desc).page(params[:page])
+      @investerxes = current_user.feed_investerxes.order(id: :desc).page(params[:page])
       flash.now[:danger] = 'メッセージの投稿に失敗しました。'
       render 'toppages/index'
     end

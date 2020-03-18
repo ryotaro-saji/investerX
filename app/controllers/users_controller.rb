@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  before_action :require_user_logged_in, only: [:index, :show, :followings, :followers]
+  before_action :require_user_logged_in, only: [:index, :show, :followings, :followers, :edit, :update, :destroy]
+  before_action :correct_user, only: [:destroy, :edit, :update]
   def index
     @users = User.order(id: :desc).page(params[:page]).per(25)
   end
@@ -16,7 +17,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      flash[:success] = 'ユーザを登録しました。'
+      flash[:success] = 'ユーザを登録しました。ようこそInvesterXへ！'
       redirect_to @user
     else
       flash.now[:danger] = 'ユーザの登録に失敗しました。'
@@ -40,6 +41,12 @@ class UsersController < ApplicationController
     end
   end  
     
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    flash[:success] = '退会しました。ご利用ありがとうございました！'
+    redirect_to "/"
+  end
     
     
   def followings
@@ -56,7 +63,7 @@ class UsersController < ApplicationController
   
   def investerxes
     @user = User.find(params[:id])
-    @user_investerxes = @user.investerxes.order(id: :desc).page(params[:page]).per(20)
+    @user_investerxes = @user.feed_investerxes.order(id: :desc).page(params[:page]).per(20)
   end
   
    private
@@ -64,4 +71,13 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation, :style, :like, :book)
   end
+  
+  def correct_user
+    @user = User.find(params[:id])
+    unless @user == current_user
+      redirect_to "/" 
+      flash[:danger] = '他人のプロフィールは変更できません。'
+    end
+  end
 end
+

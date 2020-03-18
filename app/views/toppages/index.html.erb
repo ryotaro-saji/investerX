@@ -1,4 +1,7 @@
 <div class="all">
+    <div class="ribbon">
+        <h3>Welcome to InvesterX!!</h3>
+    </div>
     <div class="sample">
         <%# app/assets/images %>
         <%= image_tag "dcb157fcbab46922bdfabb7baad5235a_s.jpg", alt: "Rails icon", id: "assets", class: "image", width: "100%",
@@ -6,12 +9,18 @@
         <p>株式投資で悩んでいるあなたへ</p>
     </div>
     <div id="wrapper">
-      <div class="a"><p>InvesterXは、様々な人の意見を参考にできる株式投資家の為の情報ツールです。</div><br>
+      <div class="tool"><p>InvesterXは、様々な人の意見を参考にできる株式投資家の為の情報ツールです。</div><br>
       投資家が何の銘柄をどんな理由でオススメしたかを投稿し、それを参考にトレードの質を上げていくサイトです。<br>
       まずはプロフィールを登録し、ご自身でオススメする銘柄を投稿してみましょう！<br>
-      <div class="b">プロフィール登録はこちらから</div>
-      </p>
+    </div> 
+    <div class="profile">プロフィール登録はこちらから!<br>
       <%= link_to 'Sign up now!', signup_path, class: 'btn btn-lg btn-primary' %>
+    </div>
+    <div class="lisk">
+        <p><span class="badge badge-danger">株にリスクは付き物です！</span><br>
+        当サービスを参考にする際は、必ずご自身で一度じっくりと考えてから投資をするようにしてください。<br>
+        当サービスによるいかなるトラブル、損失、損害等が発生したとしても、一切責任を負いません。
+        </p>
     </div>
     <footer>
         <small>&copy; 2020 InvesterX</small>
