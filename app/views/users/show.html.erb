@@ -1,14 +1,13 @@
 <ul class="nav nav-tabs nav-justified mb-3">
-    <li class="nav-item"><%= link_to 'プロフィール', user_path, class: 'nav-link' %></li>
+    <li class="nav-item"><a href="<%= user_path %>" class="nav-link <%= 'active' if current_page?(user_path) %>">プロフィール <span class="badge badge-secondary"></span></a></li>
     <li class="nav-item"><a href="<%= investerxes_user_path(@user) %>" class="nav-link <%= 'active' if current_page?(investerxes_user_path(@user)) %>">投稿一覧 <span class="badge badge-secondary"><%= @count_investerxes %></span></a></li>
-    <li class="nav-item"><%= link_to '投稿フォーム', new_investerx_path, class: 'nav-link' %></li>
-    <li class="nav-item"><a href="<%= followings_user_path(@user) %>" class="nav-link <%= 'active' if current_page?(followings_user_path(@user)) %>">Followings  <span class="badge badge-secondary"><%= @count_followings %></span></a></li>
-    <li class="nav-item"><a href="<%= followers_user_path(@user) %>" class="nav-link <%= 'active' if current_page?(followers_user_path(@user)) %>">Followers  <span class="badge badge-secondary"><%= @count_followers %></span></a></li>
+    <li class="nav-item"><a href="<%= followings_user_path(@user) %>" class="nav-link <%= 'active' if current_page?(followings_user_path(@user)) %>">フォロー  <span class="badge badge-secondary"><%= @count_followings %></span></a></li>
+    <li class="nav-item"><a href="<%= followers_user_path(@user) %>" class="nav-link <%= 'active' if current_page?(followers_user_path(@user)) %>">フォロワー  <span class="badge badge-secondary"><%= @count_followers %></span></a></li>
 </ul>
 
 <div class="card text-white bg-info">
     <div class="card-header">
-        Myプロフィール
+        マイプロフィール
     </div>
     <div class="card-body">
         <h3 class="mt-2"><i class="far fa-user"></i>名前→<%= @user.name %></h3>
@@ -23,7 +22,7 @@
       <%= render 'relationships/follow_button', user: @user %>
       <% if current_user == @user %>
           <div class="btn btn-warning ml-3" ><%= link_to 'プロフィールを編集する', edit_user_path(@user)%></div>
-          <div class="btn btn-dark ml-3" ><%= link_to 'Logout', logout_path, method: :delete%></div>
+          <div class="btn btn-dark ml-3" ><%= link_to 'ログアウト', logout_path, method: :delete%></div>
           <div class="btn btn-light ml-3" ><%= link_to "退会", @user, method: :delete, data: { confirm: "本当に退会しますか？" } %></div>
       <% end %>
     </div>

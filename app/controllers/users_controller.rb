@@ -18,10 +18,10 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      flash[:success] = 'ユーザを登録しました。ようこそInvesterXへ！'
+      flash[:success] = 'ユーザーを登録しました。ようこそInvesterXへ！'
       redirect_to @user
     else
-      flash.now[:danger] = 'ユーザの登録に失敗しました。'
+      flash.now[:danger] = 'ユーザーの登録に失敗しました。'
       render :new
     end
   end
@@ -34,7 +34,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
 
     if @user.update(user_params)
-      flash[:success] = 'プロフィール は正常に更新されました'
+      flash[:success] = 'プロフィールは正常に更新されました'
       redirect_to @user
     else
       flash.now[:danger] = 'プロフィールは更新されませんでした'
