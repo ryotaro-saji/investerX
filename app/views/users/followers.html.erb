@@ -1,3 +1,11 @@
+<ul class="nav nav-tabs nav-justified mb-3">
+    <li class="nav-item"><%= link_to 'プロフィール', user_path, class: 'nav-link' %></li>
+    <li class="nav-item"><a href="<%= investerxes_user_path(@user) %>" class="nav-link <%= 'active' if current_page?(investerxes_user_path(@user)) %>">投稿一覧 <span class="badge badge-secondary"><%= @count_investerxes %></span></a></li>
+    <li class="nav-item"><%= link_to '投稿フォーム', new_investerx_path, class: 'nav-link' %></li>
+    <li class="nav-item"><a href="<%= followings_user_path(@user) %>" class="nav-link <%= 'active' if current_page?(followings_user_path(@user)) %>">Followings  <span class="badge badge-secondary"><%= @count_followings %></span></a></li>
+    <li class="nav-item"><a href="<%= followers_user_path(@user) %>" class="nav-link <%= 'active' if current_page?(followers_user_path(@user)) %>">Followers  <span class="badge badge-secondary"><%= @count_followers %></span></a></li>
+</ul>
+
 <div class="row">
     <div class="col-sm-2">
         <%= render 'users', users: @followers %>
@@ -5,8 +13,7 @@
 </div>
 <div class="container mt-5">
     <div class="row" >
-        <div class="btn btn-dark" ><%= link_to 'Logout', logout_path, method: :delete%></div>
-        <div class="btn btn-outline-success ml-4"><%= link_to '自分のプロフィールに戻る', current_user %></div>
+        <div class="btn btn-outline-success"><%= link_to '自分のプロフィールに戻る', current_user %></div>
     </div>
 </div>
 

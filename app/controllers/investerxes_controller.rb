@@ -14,7 +14,7 @@ before_action :correct_user, only: [:destroy]
       redirect_to current_user
     else
       @investerxes = current_user.feed_investerxes.order(id: :desc).page(params[:page])
-      flash.now[:danger] = 'メッセージの投稿に失敗しました。'
+      flash.now[:danger] = 'メッセージの投稿に失敗しました。1文字～255文字以内で投稿してください。'
       render 'investerxes/new'
     end
   end

@@ -53,16 +53,19 @@ class UsersController < ApplicationController
   def followings
     @user = User.find(params[:id])
     @followings = @user.followings.page(params[:page])
+    counts(@user)
   end
   
   def followers
     @user = User.find(params[:id])
     @followers = @user.followers.page(params[:page])
+    counts(@user)
   end
   
   def investerxes
     @user = User.find(params[:id])
     @user_investerxes = @user.feed_investerxes.order(id: :desc).page(params[:page]).per(20)
+    counts(@user)
   end
   
    private
