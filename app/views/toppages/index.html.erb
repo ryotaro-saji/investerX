@@ -12,10 +12,12 @@
       <div class="tool"><p>InvesterXは、様々な人の意見を参考にできる株式投資家の為の情報ツールです。</div><br>
       投資家が何の銘柄をどんな理由でオススメしたかを投稿し、それを参考にトレードの質を上げていくサイトです。<br>
       まずはプロフィールを登録し、ご自身でオススメする銘柄を投稿してみましょう！<br>
-    </div> 
+    </div>
+    <% unless logged_in? %>
     <div class="profile">プロフィール登録はこちらから!<br>
       <%= link_to 'Sign up now!', signup_path, class: 'btn btn-lg btn-primary' %>
     </div>
+    <% end %>
     <div class="lisk">
         <p><span class="badge badge-danger">株にリスクは付き物です！</span><br>
         当サービスを参考にする際は、必ずご自身で一度じっくりと考えてから投資をするようにしてください。<br>

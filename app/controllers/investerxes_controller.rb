@@ -15,7 +15,7 @@ before_action :correct_user, only: [:destroy]
     else
       @investerxes = current_user.feed_investerxes.order(id: :desc).page(params[:page])
       flash.now[:danger] = 'メッセージの投稿に失敗しました。'
-      render 'toppages/index'
+      render 'investerxes/new'
     end
   end
 
