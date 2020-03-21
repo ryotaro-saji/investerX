@@ -186,3 +186,12 @@ h1:after {
   width: 100%;
   border-bottom: solid 3px rgb(119, 195, 223);
 }
+
+h5{
+  width: 1120px;
+  font-weight: 700;
+}
+
+h5{
+  word-wrap: break-word;
+}

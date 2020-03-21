@@ -13,9 +13,7 @@
         <div>
           <%= link_to investerx.user.name, user_path(investerx.user) %> <span class="text-muted">投稿日時 <%= investerx.created_at %></span>
         </div>
-        <div>
-          <p><%= investerx.content %></p>
-        </div>
+        <h5><%= investerx.content %></h5>
         <div>
           <% if current_user == investerx.user %>
             <%= link_to "消去", investerx, method: :delete, data: { confirm: "本当に削除しますか？" }, class: 'btn btn-danger btn-sm' %>
