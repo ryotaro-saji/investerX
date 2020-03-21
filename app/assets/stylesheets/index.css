@@ -18,6 +18,7 @@ body{
     border-top: solid 5px #5989cf;
     border-bottom: solid 5px #5989cf;
 }
+
 #wrapper p {
     margin: 0; 
     padding: 0;
@@ -83,6 +84,7 @@ footer{
     border-top: solid 2px black;
     border-bottom: solid 2px black;
 }
+
 .lisk:before, .lisk:after{
     content: '';
     position: absolute;
@@ -92,6 +94,7 @@ footer{
     height: calc(100% + 20px);
     background-color: black;
 }
+
 .lisk:before {left: 10px;}
 .lisk:after {right: 10px;}
 
@@ -104,6 +107,7 @@ footer{
   -webkit-transform: rotate(-10deg) skew(-17deg,4deg);
   transform: rotate(-10deg) skew(-17deg,4deg);
 }
+
 .ribbon:before {
   content: '';
   position: absolute;
@@ -136,6 +140,7 @@ footer{
   color: white;
   background: #f8aa37;
 }
+
 .ribbon h3:before {
   position: absolute;
   content: '';
@@ -145,6 +150,7 @@ footer{
   border-bottom: solid 7px transparent;
   border-right: solid 25px #c6821e;
 }
+
 .ribbon h3:after {
   position: absolute;
   content: '';
@@ -153,4 +159,30 @@ footer{
   border: none;
   border-bottom: solid 10px transparent;
   border-left: solid 15px #c6821e;
+}
+
+h1 {
+  position: relative;
+  padding-left: 25px;
+}
+
+h1:before {
+  position: absolute;
+  content: '';
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border: none;
+  border-left: solid 15px transparent;
+  border-bottom: solid 15px rgb(119, 195, 223);
+}
+
+h1:after {
+  position: absolute;
+  content: '';
+  bottom: -3px;
+  left: 10px;
+  width: 100%;
+  border-bottom: solid 3px rgb(119, 195, 223);
 }

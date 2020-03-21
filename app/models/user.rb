@@ -32,6 +32,6 @@ class User < ApplicationRecord
     end
     
     def feed_investerxes
-    Investerx.where(user_id: self.following_ids + [self.id])
-  end
+      Investerx.where(user_id: self.following_ids + [self.id])
+    end
 end

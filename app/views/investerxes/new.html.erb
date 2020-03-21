@@ -1,10 +1,12 @@
+<h1>新規投稿</h1>
+<h4>ご自身がオススメする銘柄や、その理由を投稿しましょう！</h4>
 <% if logged_in? %>
   <%= form_with(model: @investerx, local: true) do |f| %>
     <div class="form-group">
       <%= f.text_area :content, class: 'form-control', rows: 5 %>
     </div>
     <div class="text-center">
-    <%= f.submit '投稿', class: 'btn btn-primary' %>
+      <%= f.submit '投稿', class: 'btn btn-primary' %>
     </div>
   <% end %>
 <% end %>

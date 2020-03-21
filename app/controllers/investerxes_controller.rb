@@ -34,7 +34,7 @@ before_action :correct_user, only: [:destroy]
   def correct_user
     @investerx = current_user.investerxes.find_by(id: params[:id])
     unless @investerx
-    redirect_to root_url
+      redirect_to root_url
     end
   end
 end

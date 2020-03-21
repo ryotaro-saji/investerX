@@ -18,11 +18,12 @@
         </div>
         <div>
           <% if current_user == investerx.user %>
-            <%= link_to "消去", investerx, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
+            <%= link_to "消去", investerx, method: :delete, data: { confirm: "本当に削除しますか？" }, class: 'btn btn-danger btn-sm' %>
           <% end %>
         </div>
       </div>
     </li>
   <% end %>
+</ul>
   
 <%= paginate @user_investerxes %>
